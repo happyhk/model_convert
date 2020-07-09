@@ -116,7 +116,24 @@ Type "help", "copyright", "credits" or "license" for more information.
 `'1.0.0'`
 此时一般的caffe框架已经搭建好了，但是官方caffe框架不支持yolo3的upsample层，所以需要手动增加upsample层<br>
 a)、下载code from [链接](https://pan.baidu.com/share/init?surl=3GpoYoqKSCeFX0m0ves_fQ#list/path=%2F)<br>
-    密码：bwrd
+    密码：bwrd<br>
 b)、apply 下载的code到caffe框架里面，如下图所示<br>
 ![image](https://github.com/happyhk/model_convert/blob/master/images/20190408230956798.png)
+(1) make clean   (2) make all -j8   (3) make pycaffe -j8<br>
+### 转换yolo3 darknet模型成caffemodel
+#### 安装
+```Bash
+git clone [https://github.com/ChenYingpeng/caffe-yolov3](https://github.com/ChenYingpeng/caffe-yolov3)
+cd caffe-yolov3
+mkdir build
+cd build
+cmake ..
+make -j6
+```
+#### Darknet转Caffe
+#### Demo
+```Bash
+python cfg/yolov4.cfg weights/yolov4.weights prototxt/yolov4.prototxt caffemodel/yolov4.caffemodel
+```
+c)、重新开始编译caffe<br>
 
