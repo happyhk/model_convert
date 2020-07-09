@@ -6,7 +6,7 @@
 ```Bash
 apt install caffe-cpu
 ```
-###安装依赖环境
+### 安装依赖环境
 首先我们要安装依赖环境，依赖环境有点多，需要保证都安装了，以免在编译的时候出错。如果之前安装过了，重复执行命令也没有问题的。<br>
 ```Bash
 sudo apt-get install libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler
@@ -22,7 +22,7 @@ sudo apt-get install libgflags-dev libgoogle-glog-dev liblmdb-dev
 sudo apt-get install git cmake build-essential
 pip install scikit-image
 ```
-###修改编译文件
+### 修改编译文件
 ```Bash
 # 切换到opt目录下
 cd /opt
@@ -46,7 +46,7 @@ CPU_ONLY := 1
 INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial
 LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu/hdf5/serial
 ```
-###开始编译
+### 开始编译
 现在就可以开始编译了，前面两条是编译源码，后面两条是编译测试，-j4是表示使用4个线程并行编译，加快编译速度。
 ```Bash
 make -j4 pycaffe
@@ -54,6 +54,17 @@ make -j4 all
 make -j4 test
 make -j4 runtest
 ```
-###添加环境变量
-
+### 添加环境变量
 使用命令`vim /etc/profile`，在该文件的最后加上下面的这行代码。
+```Bash
+export PYTHONPATH=/opt/caffe/python:$PYTHONPATH
+```
+我们可以简单测试一下是否安装成功了，正常的话是可以输出caffe的版本信息的。<br>
+```python
+# python
+Python 2.7.12 (default, Dec  4 2017, 14:50:18)
+[GCC 5.4.0 20160609] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import caffe
+>>> caffe.__version__
+```
