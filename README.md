@@ -55,4 +55,5 @@ make -j4 test
 make -j4 runtest
 ```
 ###添加环境变量
+
 使用命令`vim /etc/profile`，在该文件的最后加上下面的这行代码。
