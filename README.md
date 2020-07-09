@@ -40,3 +40,19 @@ vim Makefile.config
 ```Bash
 CPU_ONLY := 1
 ```
+* 然后版96、97、98行，改成如下：<br>
+```Bash
+# Whatever else you find you need goes here.
+INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/include/hdf5/serial
+LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu/hdf5/serial
+```
+###开始编译
+现在就可以开始编译了，前面两条是编译源码，后面两条是编译测试，-j4是表示使用4个线程并行编译，加快编译速度。
+```Bash
+make -j4 pycaffe
+make -j4 all
+make -j4 test
+make -j4 runtest
+```
+###添加环境变量
+使用命令`vim /etc/profile`，在该文件的最后加上下面的这行代码。
