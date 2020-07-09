@@ -1,6 +1,6 @@
 # model_convert
 不同的深度学习框架下训练好的模型保存的格式不同，对于模型的改进和部署来说都是一个问题，故而将模型互相转换就尤为重要。本项目主要记录本人在模型转换过程中的一些记录。
-
+# Darknet版本的yolov3模型转为caffe格式
 ## ubuntu16安装caffe
 如果Ubuntu版本是>= 17.04的，就可以使用以下的方式安装Caffe，注意安装的是Python 3的版本。<br>
 ```Bash
@@ -114,3 +114,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 ```
 会输出如下信息。<br>
 `'1.0.0'`
+此时一般的caffe框架已经搭建好了，但是官方caffe框架不支持yolo3的upsample层，所以需要手动增加upsample层<br>
+a)、下载code from [链接](https://pan.baidu.com/share/init?surl=3GpoYoqKSCeFX0m0ves_fQ#list/path=%2F)<br>
+    密码：bwrd
+b)、apply 下载的code到caffe框架里面，如下图所示<br>
