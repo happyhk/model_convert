@@ -118,3 +118,5 @@ Type "help", "copyright", "credits" or "license" for more information.
 a)、下载code from [链接](https://pan.baidu.com/share/init?surl=3GpoYoqKSCeFX0m0ves_fQ#list/path=%2F)<br>
     密码：bwrd
 b)、apply 下载的code到caffe框架里面，如下图所示<br>
+![image](https://github.com/happyhk/model_convert/blob/master/images/20190408230956798.png)
+
