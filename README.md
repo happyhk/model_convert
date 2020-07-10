@@ -135,5 +135,4 @@ make -j6
 ```Bash
 python cfg/yolov4.cfg weights/yolov4.weights prototxt/yolov4.prototxt caffemodel/yolov4.caffemodel
 ```
-c)、重新开始编译caffe<br>
-
+本文档主要参考：[https://github.com/ChenYingpeng/caffe-yolov3](https://github.com/ChenYingpeng/caffe-yolov3)
